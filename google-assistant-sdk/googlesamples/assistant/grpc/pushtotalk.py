@@ -49,6 +49,7 @@ except (SystemError, ImportError):
     import browser_helpers
     import device_helpers
 
+import actions.actionsHandler
 
 ASSISTANT_API_ENDPOINT = 'embeddedassistant.googleapis.com'
 END_OF_UTTERANCE = embedded_assistant_pb2.AssistResponse.END_OF_UTTERANCE
@@ -446,26 +447,27 @@ def main(api_endpoint, credentials, project_id,
             with open(device_config, 'w') as f:
                 json.dump(payload, f)
 
-    device_handler = device_helpers.DeviceRequestHandler(device_id)
-
-    @device_handler.command('action.devices.commands.OnOff')
-    def onoff(on):
-        if on:
-            logging.info('Turning device on')
-        else:
-            logging.info('Turning device off')
-
-    @device_handler.command('com.example.commands.BlinkLight')
-    def blink(speed, number):
-        logging.info('Blinking device %s times.' % number)
-        delay = 1
-        if speed == "slowly":
-            delay = 2
-        elif speed == "quickly":
-            delay = 0.5
-        for i in range(int(number)):
-            logging.info('Device is blinking.')
-            time.sleep(delay)
+    device_handler = actions.actionsHandler.deviceRequestHandler(device_id)
+    #device_handler = device_helpers.DeviceRequestHandler(device_id)
+    #
+    #@device_handler.command('action.devices.commands.OnOff')
+    #def onoff(on):
+    #    if on:
+    #        logging.info('Turning device on')
+    #    else:
+    #        logging.info('Turning device off')
+    #
+    #@device_handler.command('com.example.commands.BlinkLight')
+    #def blink(speed, number):
+    #    logging.info('Blinking device %s times.' % number)
+    #    delay = 1
+    #    if speed == "slowly":
+    #        delay = 2
+    #    elif speed == "quickly":
+    #        delay = 0.5
+    #    for i in range(int(number)):
+    #        logging.info('Device is blinking.')
+    #        time.sleep(delay)
 
     with SampleAssistant(lang, device_model_id, device_id,
                          conversation_stream, display,

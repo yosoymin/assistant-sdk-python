@@ -15,3 +15,4 @@ google_assistant.egg-info/
 .tox/
 .cache/
 *.suo
+/google-assistant-sdk/googlesamples/assistant/grpc/actions/creds.data

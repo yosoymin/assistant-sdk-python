@@ -34,6 +34,7 @@
     <Compile Include="google-assistant-grpc\google\__init__.py" />
     <Compile Include="google-assistant-grpc\nox.py" />
     <Compile Include="google-assistant-grpc\setup.py" />
+    <Compile Include="google-assistant-sdk\googlesamples\assistant\grpc\actions\actionsHandler.py" />
     <Compile Include="google-assistant-sdk\googlesamples\assistant\grpc\assistant_helpers.py" />
     <Compile Include="google-assistant-sdk\googlesamples\assistant\grpc\audiofileinput.py" />
     <Compile Include="google-assistant-sdk\googlesamples\assistant\grpc\audio_helpers.py" />
@@ -55,6 +56,8 @@
     <Compile Include="google-assistant-sdk\tests\test_endtoend.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="google-assistant-sdk\googlesamples\assistant\grpc\actions\actions.es.json" />
+    <Content Include="google-assistant-sdk\googlesamples\assistant\grpc\actions\gactions.exe" />
     <Content Include="google-assistant-sdk\googlesamples\assistant\grpc\requirements.txt" />
     <Content Include="google-assistant-sdk\googlesamples\assistant\library\requirements.txt" />
   </ItemGroup>
@@ -69,6 +72,7 @@
     <Folder Include="google-assistant-sdk\googlesamples" />
     <Folder Include="google-assistant-sdk\googlesamples\assistant" />
     <Folder Include="google-assistant-sdk\googlesamples\assistant\grpc" />
+    <Folder Include="google-assistant-sdk\googlesamples\assistant\grpc\actions\" />
     <Folder Include="google-assistant-sdk\googlesamples\assistant\library" />
     <Folder Include="google-assistant-sdk\tests" />
   </ItemGroup>

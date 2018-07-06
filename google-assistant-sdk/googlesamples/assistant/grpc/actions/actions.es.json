@@ -1,0 +1,97 @@
+{
+    "locale": "es",
+    "manifest": {
+        "displayName": "Controlar Kodi",
+        "invocationName": "Controlar Kodi",
+        "category": "PRODUCTIVITY"
+    },
+    "actions": [
+        {
+            "name": "PlayMusic",
+            "availability": {
+                "deviceClasses": [
+                    {
+                        "assistantSdkDevice": {}
+                    }
+                ]
+            },
+            "intent": {
+                "name": "com.minsoft.actions.PlayMusic",
+                "parameters": [
+                    {
+                        "name": "artist",
+                        "type": "SchemaOrg_Person"
+                    },
+                    {
+                        "name": "album",
+                        "type": "SchemaOrg_MusicAlbum"
+                    }
+                ],
+                "trigger": {
+                    "queryPatterns": [
+                        "reproducir canciones de $SchemaOrg_Person:artist",
+                        "reproducir álbum $SchemaOrg_MusicAlbum:album",
+                        "escuchar canciones de $SchemaOrg_Person:artist",
+                        "escuchar álbum $SchemaOrg_MusicAlbum:album",
+                        "modo fiesta",
+                        "modo party",
+                        "party mode",
+                        "reproducir música",
+                        "escuchar música"
+                    ]
+                }
+            },
+            "fulfillment": {
+                "staticFulfillment": {
+                    "templatedResponse": {
+                        "items": [
+                            {
+                                "simpleResponse": {
+                                    "textToSpeech": "Reproduciendo música. $artist $album"
+                                }
+                            },
+                            {
+                                "deviceExecution": {
+                                    "command": "com.minsoft.actions.PlayMusic",
+                                    "params": {
+                                        "artist": "$artist",
+                                        "album": "$album"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ],
+    "types": [
+        {
+            "name": "$Speed",
+            "entities": [
+                {
+                    "key": "SLOWLY",
+                    "synonyms": [
+                        "despacio",
+                        "lento"
+                    ]
+                },
+                {
+                    "key": "NORMALLY",
+                    "synonyms": [
+                        "normal",
+                        "normalmente"
+                    ]
+                },
+                {
+                    "key": "QUICKLY",
+                    "synonyms": [
+                        "rápido",
+                        "rápdiamente",
+                        "veloz"
+                    ]
+                }
+            ]
+        }
+    ]
+}
