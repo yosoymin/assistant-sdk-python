@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "assistant-sdk-python", "assistant-sdk-python.pyproj", "{7FDEF026-3614-487C-B875-7C1AD99CD6CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7FDEF026-3614-487C-B875-7C1AD99CD6CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FDEF026-3614-487C-B875-7C1AD99CD6CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {181A07B5-73AC-4B94-8EE8-F289ECAEF01D}
+	EndGlobalSection
+EndGlobal

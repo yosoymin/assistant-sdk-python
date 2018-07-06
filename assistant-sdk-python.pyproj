@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7fdef026-3614-487c-b875-7c1ad99cd6ca}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>google-assistant-sdk\googlesamples\assistant\grpc\pushtotalk.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>google-assistant-sdk\googlesamples\assistant\grpc\</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterId />
+    <CommandLineArguments>--lang es-ES</CommandLineArguments>
+    <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
+    <IsWindowsApplication>False</IsWindowsApplication>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="google-assistant-grpc\google\assistant\embedded\v1alpha1\embedded_assistant_pb2.py" />
+    <Compile Include="google-assistant-grpc\google\assistant\embedded\v1alpha1\embedded_assistant_pb2_grpc.py" />
+    <Compile Include="google-assistant-grpc\google\assistant\embedded\v1alpha1\__init__.py" />
+    <Compile Include="google-assistant-grpc\google\assistant\embedded\v1alpha2\embedded_assistant_pb2.py" />
+    <Compile Include="google-assistant-grpc\google\assistant\embedded\v1alpha2\embedded_assistant_pb2_grpc.py" />
+    <Compile Include="google-assistant-grpc\google\assistant\embedded\v1alpha2\__init__.py" />
+    <Compile Include="google-assistant-grpc\google\assistant\embedded\__init__.py" />
+    <Compile Include="google-assistant-grpc\google\assistant\__init__.py" />
+    <Compile Include="google-assistant-grpc\google\__init__.py" />
+    <Compile Include="google-assistant-grpc\nox.py" />
+    <Compile Include="google-assistant-grpc\setup.py" />
+    <Compile Include="google-assistant-sdk\googlesamples\assistant\grpc\assistant_helpers.py" />
+    <Compile Include="google-assistant-sdk\googlesamples\assistant\grpc\audiofileinput.py" />
+    <Compile Include="google-assistant-sdk\googlesamples\assistant\grpc\audio_helpers.py" />
+    <Compile Include="google-assistant-sdk\googlesamples\assistant\grpc\browser_helpers.py" />
+    <Compile Include="google-assistant-sdk\googlesamples\assistant\grpc\devicetool.py" />
+    <Compile Include="google-assistant-sdk\googlesamples\assistant\grpc\device_helpers.py" />
+    <Compile Include="google-assistant-sdk\googlesamples\assistant\grpc\pushtotalk.py" />
+    <Compile Include="google-assistant-sdk\googlesamples\assistant\grpc\textinput.py" />
+    <Compile Include="google-assistant-sdk\googlesamples\assistant\grpc\__init__.py" />
+    <Compile Include="google-assistant-sdk\googlesamples\assistant\library\hotword.py" />
+    <Compile Include="google-assistant-sdk\googlesamples\assistant\library\__init__.py" />
+    <Compile Include="google-assistant-sdk\googlesamples\assistant\__init__.py" />
+    <Compile Include="google-assistant-sdk\googlesamples\__init__.py" />
+    <Compile Include="google-assistant-sdk\nox.py" />
+    <Compile Include="google-assistant-sdk\setup.py" />
+    <Compile Include="google-assistant-sdk\tests\test_audio_helpers.py" />
+    <Compile Include="google-assistant-sdk\tests\test_devicetool.py" />
+    <Compile Include="google-assistant-sdk\tests\test_device_helpers.py" />
+    <Compile Include="google-assistant-sdk\tests\test_endtoend.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="google-assistant-sdk\googlesamples\assistant\grpc\requirements.txt" />
+    <Content Include="google-assistant-sdk\googlesamples\assistant\library\requirements.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="google-assistant-grpc" />
+    <Folder Include="google-assistant-grpc\google" />
+    <Folder Include="google-assistant-grpc\google\assistant" />
+    <Folder Include="google-assistant-grpc\google\assistant\embedded" />
+    <Folder Include="google-assistant-grpc\google\assistant\embedded\v1alpha1" />
+    <Folder Include="google-assistant-grpc\google\assistant\embedded\v1alpha2" />
+    <Folder Include="google-assistant-sdk" />
+    <Folder Include="google-assistant-sdk\googlesamples" />
+    <Folder Include="google-assistant-sdk\googlesamples\assistant" />
+    <Folder Include="google-assistant-sdk\googlesamples\assistant\grpc" />
+    <Folder Include="google-assistant-sdk\googlesamples\assistant\library" />
+    <Folder Include="google-assistant-sdk\tests" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+</Project>

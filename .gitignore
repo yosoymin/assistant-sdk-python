@@ -14,3 +14,4 @@ google_assistant.egg-info/
 .nox/
 .tox/
 .cache/
+*.suo
