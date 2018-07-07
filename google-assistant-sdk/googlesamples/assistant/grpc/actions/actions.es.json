@@ -1,210 +1,78 @@
 {
-    "locale": "es",
-    "manifest": {
-      "displayName": "Controlar Kodi",
-      "invocationName": "Controlar Kodi",
-      "category": "PRODUCTIVITY"
-    },
+  "locale": "es",
+  "manifest": {
+    "displayName": "Controlar Kodi",
+    "invocationName": "Controlar Kodi",
+    "category": "PRODUCTIVITY"
+  },
   "actions": [
     {
       "name": "PlayMusic",
-      "availability": {
-        "deviceClasses": [
-          {
-            "assistantSdkDevice": {}
-          }
-        ]
-      },
+      "availability": { "deviceClasses": [ { "assistantSdkDevice": {} } ] },
       "intent": {
-        "name": "com.minsoft.actions.PlayMusic",
+        "name": "PlayMusic",
         "parameters": [
-          {
-            "name": "artist",
-            "type": "SchemaOrg_Person"
-          },
-          {
-            "name": "album",
-            "type": "SchemaOrg_MusicAlbum"
-          }
+          { "name": "artist", "type": "SchemaOrg_Person" },
+          { "name": "album", "type": "SchemaOrg_MusicAlbum" }
         ],
-        "trigger": {
-          "queryPatterns": [
+        "trigger": { "queryPatterns": [
             "reproducir canciones de $SchemaOrg_Person:artist",
             "reproducir álbum $SchemaOrg_MusicAlbum:album",
             "escuchar canciones de $SchemaOrg_Person:artist",
             "escuchar álbum $SchemaOrg_MusicAlbum:album",
-            "modo fiesta",
-            "modo party",
-            "party mode",
-            "reproducir música",
-            "escuchar música"
-          ]
-        }
+            "(modo)? aleatorio", "(modo)? fiesta", "(modo)? party",
+            "reproducir música", "escuchar música"
+        ] }
       },
-      "fulfillment": {
-        "staticFulfillment": {
-          "templatedResponse": {
-            "items": [
-              {
-                "simpleResponse": {
-                  "textToSpeech": "Reproduciendo música. $artist $album"
-                }
-              },
-              {
-                "deviceExecution": {
-                  "command": "com.minsoft.actions.PlayMusic",
-                  "params": {
-                    "artist": "$artist",
-                    "album": "$album"
-                  }
-                }
-              }
-            ]
-          }
-        }
-      }
+      "fulfillment": { "staticFulfillment": { "templatedResponse": { "items": [
+        { "simpleResponse": { "textToSpeech": "Reproduciendo música. $artist $album" } },
+        { "deviceExecution": { "command": "com.minsoft.actions.PlayMusic", "params": { "artist": "$artist", "album": "$album" } } }
+      ] } } }
     },
     {
       "name": "Stop",
-      "availability": {
-        "deviceClasses": [
-          {
-            "assistantSdkDevice": {}
-          }
-        ]
-      },
+      "availability": { "deviceClasses": [ { "assistantSdkDevice": {} } ] },
       "intent": {
-        "name": "com.minsoft.actions.Stop",
-        "trigger": {
-          "queryPatterns": [
-            "parar",
-            "stop",
-            "quitar"
-          ]
-        }
+        "name": "Stop",
+        "trigger": { "queryPatterns": [ "parar", "stop", "quitar" ] }
       },
-      "fulfillment": {
-        "staticFulfillment": {
-          "templatedResponse": {
-            "items": [
-              {
-                "simpleResponse": {
-                  "textToSpeech": "Parando reproducción"
-                }
-              },
-              {
-                "deviceExecution": {
-                  "command": "com.minsoft.actions.Stop"
-                }
-              }
-            ]
-          }
-        }
-      }
+      "fulfillment": { "staticFulfillment": { "templatedResponse": { "items": [
+        { "simpleResponse": { "textToSpeech": "Parando reproducción" } },
+        { "deviceExecution": { "command": "com.minsoft.actions.Stop" } }
+      ] } } }
     },
     {
       "name": "Pause",
-      "availability": {
-        "deviceClasses": [
-          {
-            "assistantSdkDevice": {}
-          }
-        ]
-      },
+      "availability": { "deviceClasses": [ { "assistantSdkDevice": {} } ] },
       "intent": {
-        "name": "com.minsoft.actions.Pause",
-        "trigger": {
-          "queryPatterns": [
-            "pausar",
-            "pause",
-            "interrumpir"
-          ]
-        }
+        "name": "Pause",
+        "trigger": { "queryPatterns": [ "pausar", "pausa", "pause", "interrumpir" ] }
       },
-      "fulfillment": {
-        "staticFulfillment": {
-          "templatedResponse": {
-            "items": [
-              {
-                "simpleResponse": {
-                  "textToSpeech": "Pausando reproducción"
-                }
-              },
-              {
-                "deviceExecution": {
-                  "command": "com.minsoft.actions.Pause"
-                }
-              }
-            ]
-          }
-        }
-      }
+      "fulfillment": { "staticFulfillment": { "templatedResponse": { "items": [
+        { "simpleResponse": { "textToSpeech": "Pausando reproducción" } },
+        { "deviceExecution": { "command": "com.minsoft.actions.Pause" } }
+      ] } } }
     },
     {
       "name": "Resume",
-      "availability": {
-        "deviceClasses": [
-          {
-            "assistantSdkDevice": {}
-          }
-        ]
-      },
+      "availability": { "deviceClasses": [ { "assistantSdkDevice": {} } ] },
       "intent": {
-        "name": "com.minsoft.actions.Resume",
-        "trigger": {
-          "queryPatterns": [
-            "reanudar",
-            "resume",
-            "continuar"
-          ]
-        }
+        "name": "Resume",
+        "trigger": { "queryPatterns": [ "reanudar", "resume", "continuar", "continue", "play" ] }
       },
-      "fulfillment": {
-        "staticFulfillment": {
-          "templatedResponse": {
-            "items": [
-              {
-                "simpleResponse": {
-                  "textToSpeech": "Reanudando reproducción"
-                }
-              },
-              {
-                "deviceExecution": {
-                  "command": "com.minsoft.actions.Resume"
-                }
-              }
-            ]
-          }
-        }
-      }
+      "fulfillment": { "staticFulfillment": { "templatedResponse": { "items": [
+        { "simpleResponse": { "textToSpeech": "Reanudando reproducción" } },
+        { "deviceExecution": { "command": "com.minsoft.actions.Resume" } }
+      ] } } }
     }
   ],
   "types": [
     {
       "name": "$Speed",
       "entities": [
-        {
-          "key": "SLOWLY",
-          "synonyms": [
-            "despacio",
-            "lento"
-          ]
-        },
-        {
-          "key": "NORMALLY",
-          "synonyms": [
-            "normal",
-            "normalmente"
-          ]
-        },
-        {
-          "key": "QUICKLY",
-          "synonyms": [
-            "rápido",
-            "rápdiamente",
-            "veloz"
-          ]
-        }
+        { "key": "SLOWLY", "synonyms": [ "despacio", "lento" ] },
+        { "key": "NORMALLY", "synonyms": [ "normal", "normalmente" ] },
+        { "key": "QUICKLY", "synonyms": [ "rápido", "rápdiamente", "veloz" ] }
       ]
     }
   ]

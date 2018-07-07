@@ -448,26 +448,6 @@ def main(api_endpoint, credentials, project_id,
                 json.dump(payload, f)
 
     device_handler = actions.actionsHandler.deviceRequestHandler(device_id)
-    #device_handler = device_helpers.DeviceRequestHandler(device_id)
-    #
-    #@device_handler.command('action.devices.commands.OnOff')
-    #def onoff(on):
-    #    if on:
-    #        logging.info('Turning device on')
-    #    else:
-    #        logging.info('Turning device off')
-    #
-    #@device_handler.command('com.example.commands.BlinkLight')
-    #def blink(speed, number):
-    #    logging.info('Blinking device %s times.' % number)
-    #    delay = 1
-    #    if speed == "slowly":
-    #        delay = 2
-    #    elif speed == "quickly":
-    #        delay = 0.5
-    #    for i in range(int(number)):
-    #        logging.info('Device is blinking.')
-    #        time.sleep(delay)
 
     with SampleAssistant(lang, device_model_id, device_id,
                          conversation_stream, display,
@@ -486,8 +466,6 @@ def main(api_endpoint, credentials, project_id,
         wait_for_user_trigger = not once
         while True:
             if wait_for_user_trigger:
-                #click.pause(info='Press Enter to send a new request...')
-                #query = click.prompt('Press Enter to send a new request')
                 query = input("Press Enter to send a new request: ")
 
             if query == "":
