@@ -58,6 +58,7 @@
   <ItemGroup>
     <Content Include="google-assistant-sdk\googlesamples\assistant\grpc\actions\actions.es.json" />
     <Content Include="google-assistant-sdk\googlesamples\assistant\grpc\actions\gactions.exe" />
+    <Content Include="google-assistant-sdk\googlesamples\assistant\grpc\actions\updateActions.bat" />
     <Content Include="google-assistant-sdk\googlesamples\assistant\grpc\requirements.txt" />
     <Content Include="google-assistant-sdk\googlesamples\assistant\library\requirements.txt" />
   </ItemGroup>
