@@ -64,6 +64,15 @@
         { "simpleResponse": { "textToSpeech": "Reanudando reproducción" } },
         { "deviceExecution": { "command": "com.minsoft.actions.Resume" } }
       ] } } }
+    },
+    {
+      "name": "PlayInfo",
+      "availability": { "deviceClasses": [ { "assistantSdkDevice": {} } ] },
+      "intent": {
+        "name": "PlayInfo",
+        "trigger": { "queryPatterns": [ "qué está sonando", "qué suena", "info" ] }
+      },
+      "fulfillment": { "conversationName": "kodiPlayInfo" }
     }
   ],
   "types": [
@@ -75,5 +84,12 @@
         { "key": "QUICKLY", "synonyms": [ "rápido", "rápdiamente", "veloz" ] }
       ]
     }
-  ]
+  ],
+  "conversations": {
+    "kodiPlayInfo": {
+      "name": "kodiPlayInfo",
+      "url": "https://139.47.89.49",
+      "fulfillmentApiVersion": 2
+    }
+  }
 }

@@ -16,3 +16,4 @@ google_assistant.egg-info/
 .cache/
 *.suo
 /google-assistant-sdk/googlesamples/assistant/grpc/actions/creds.data
+*.pem
